@@ -1,11 +1,7 @@
 /*
-  Simple Waveform generator with Arduino Due
+  basic heart waveform generator
+  4 buttons to choose 4 different heart activities
 
-  * connect two push buttons to the digital pins 2 and 3 
-    with a 10 kilohm pulldown resistor to choose the waveform
-    to send to the DAC0 and DAC1 channels
-  * connect a 10 kilohm potentiometer to A0 to control the 
-    signal frequency
 
  */
 
@@ -13,7 +9,7 @@
 
 #define bradycardia 2000000/maxSamplesNum  // ~= 29.8bpm
 #define tachycardia 2000                   // ~= 240bpm
-#define resting 8000                       // ~= 61bpm
+#define resting 8000                       // ~= 61bpm 
 
 
 const int button0 = 2, button1 = 3, button2 = 4, button3 = 5;
@@ -51,7 +47,6 @@ void loop() {
     
   if(!dead){
     analogWrite(DAC0, waveformsTable[wave0][i]);  // write the selected waveform on DAC0
-    analogWrite(DAC1, waveformsTable[wave1][i]);  // write the selected waveform on DAC1
   
     i++;
     if(i == maxSamplesNum){  // Reset the counter to repeat the wave
