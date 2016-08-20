@@ -7,6 +7,8 @@
 
 #include "Waveforms.h"
 
+//penis penis
+
 #define bradycardia 2000000/maxSamplesNum  // ~= 29.8bpm
 #define tachycardia 2000                   // ~= 240bpm
 #define resting 8000                       // ~= 61bpm 
